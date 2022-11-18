@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "6ac7757d-476d-4a4e-aeb3-2f82957639d6",
+		"name": "XeApiTesting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetMethod",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3f20d5ef-3513-48db-a5e4-217eb7861ba5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Field availability check\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"body\")",
+							"});",
+							"",
+							"pm.test(\"JSON Body has content\", function () {",
+							"var respBody = pm.response.json();",
+							"pm.expect(respBody.title).is.to.equal(\"string\");",
+							"});",
+							"",
+							"pm.test(\"Body matches following string\", function () {",
+							"",
+							"pm.expect(pm.response.text()).to.not.include('zombie');",
+							"",
+							"});",
+							"",
+							"// pm.test(\"verify response through JSON\", function () {",
+							"    ",
+							"//     const jsonData = pm.response.json();",
+							"//     const componentData = jsonData;",
+							"//     pm.expect(componentData).to.be.an(\"array\");",
+							"//     pm.expect(componentData).to.be.true;",
+							"",
+							"// });",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "78c3c559-1c54-453a-b275-50103608df45",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "PostMethod",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e5285a5f-feaf-423a-bd86-76feda767eee",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches following string\", function () {",
+							"pm.expect(pm.response.text()).to.include('bacon');",
+							"pm.expect(pm.response.text()).to.include('cheese');",
+							"pm.expect(pm.response.text()).to.include('mushroom');",
+							"pm.expect(pm.response.text()).to.not.include('chicken');",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8685caef-0c51-4e6f-bafc-ea186ac50616",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "66198989-e179-4b8e-8609-92c022100c26",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"student\": \"Tim Allen\",\n\"email_address\": \"tim@homeimprovement.com\",\n\"phone\": \"(408) 8674530\",\n\"current_grade\": \"B+\",\n\"topping\": [\n\"bacon\",\n\"cheese\",\n\"mushroom\"\n]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://httpbin.org/post"
+			},
+			"response": []
+		}
+	]
+}
