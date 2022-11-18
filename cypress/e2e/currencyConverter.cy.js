@@ -8,7 +8,7 @@ describe('Xe Currency Converter', () => {
 
     it('Validate the converted amount after calculation', () => {
 
-      cy.wait(1000)
+      cy.wait(1500)
       //Providing amount
       cy.get('.amount-input__Wrapper-sc-1gq6pic-0')
       .type('10')
