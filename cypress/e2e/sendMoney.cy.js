@@ -17,6 +17,7 @@
         //Register now button is now enabled
         cy.get('.ButtonBase-cwHurt').should('be.enabled')
         cy.get('.ButtonBase-cwHurt').click()
+        cy.wait(1000)
       })
 
 })
