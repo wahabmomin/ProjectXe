@@ -22,8 +22,9 @@
 							"});",
 							"",
 							"pm.test(\"JSON Body has content\", function () {",
-							"var respBody = pm.response.json();",
-							"pm.expect(respBody.title).is.to.equal(\"string\");",
+							"// var respBody = pm.response.json();",
+							"// pm.expect(respBody.title).to.be",
+							"    console.log(response.body);",
 							"});",
 							"",
 							"pm.test(\"Body matches following string\", function () {",
@@ -51,7 +52,7 @@
 					}
 				}
 			],
-			"_postman_id": "78c3c559-1c54-453a-b275-50103608df45",
+			"id": "78c3c559-1c54-453a-b275-50103608df45",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -96,7 +97,7 @@
 					}
 				}
 			],
-			"_postman_id": "66198989-e179-4b8e-8609-92c022100c26",
+			"id": "66198989-e179-4b8e-8609-92c022100c26",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
