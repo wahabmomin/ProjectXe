@@ -24,7 +24,7 @@
 							"pm.test(\"JSON Body has content\", function () {",
 							"// var respBody = pm.response.json();",
 							"// pm.expect(respBody.title).to.be",
-							"    console.log(response.body);",
+							"    console.log(response);",
 							"});",
 							"",
 							"pm.test(\"Body matches following string\", function () {",
