@@ -21,7 +21,7 @@
 							"    pm.expect(pm.response.text()).to.include(\"body\")",
 							"});",
 							"",
-							"pm.test(\"Body matches following string\", function () {",
+							"pm.test(\"Body doesn't matches following string\", function () {",
 							"    pm.expect(pm.response.text()).to.not.include('zombie');",
 							"});",
 							"",
